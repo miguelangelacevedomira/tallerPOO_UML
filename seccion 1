@@ -1,0 +1,95 @@
+   
+        int numeroEntero = 10;
+        double numeroDecimal = 5.75;
+        char caracter = 'A';
+        String texto = "Hola Mundo";
+        boolean esVerdadero = true;
+ 
+        System.out.println("Entero: " + numeroEntero);
+        System.out.println("Decimal: " + numeroDecimal);
+        System.out.println("Caracter: " + caracter);
+        System.out.println("Texto: " + texto);
+        System.out.println("Booleano: " + esVerdadero);
+
+        System.out.println("Suma: " + (numeroEntero + 5));
+        System.out.println("Resta: " + (numeroEntero - 3));
+        System.out.println("Multiplicación: " + (numeroEntero * 2));
+        System.out.println("División: " + (numeroEntero / 2));
+        System.out.println("Módulo: " + (numeroEntero % 3));
+
+     
+        System.out.println("¿10 < 20? " + (10 < 20));
+        System.out.println("¿10 > 20? " + (10 > 20));
+        System.out.println("¿10 == 10? " + (10 == 10));
+        System.out.println("¿10 != 5? " + (10 != 5));
+        
+      boolean condicion1 = true;
+        boolean condicion2 = false;
+        System.out.println("AND lógico: " + (condicion1 && condicion2));
+        System.out.println("OR lógico: " + (condicion1 || condicion2));
+        System.out.println("NOT lógico: " + (!condicion1));
+
+        // Este comentario explica una línea
+        /*
+         * Este es un comentario de bloque.
+         * Ideal para documentar partes más extensas del código.
+         */
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingresa un número entero: ");
+        int entradaInt = scanner.nextInt();
+        System.out.print("Ingresa un número decimal: ");
+        double entradaDouble = scanner.nextDouble();
+        System.out.println("Entero ingresado: " + entradaInt);
+        System.out.println("Decimal ingresado: " + entradaDouble);
+
+        String numeroComoTexto = "123";
+        int convertidoAInt = Integer.parseInt(numeroComoTexto);
+        double convertidoADouble = Double.parseDouble(numeroComoTexto);
+        String intAString = String.valueOf(convertidoAInt);
+        String doubleAString = String.valueOf(convertidoADouble);
+        System.out.println("Convertido a int: " + convertidoAInt);
+        System.out.println("Convertido a double: " + convertidoADouble);
+        System.out.println("int a String: " + intAString);
+        System.out.println("double a String: " + doubleAString);
+
+        try {
+            int numeroErroneo = Integer.parseInt("abc");
+        } catch (NumberFormatException e) {
+            System.out.println("Error: No se puede convertir a número. " + e.getMessage());
+        }
+
+
+        final double PI = 3.14159;
+        System.out.println("Constante PI: " + PI);
+    
+        double base = 4;
+        double exponente = 2;
+        System.out.println("Potencia: " + Math.pow(base, exponente));
+        System.out.println("Raíz cuadrada: " + Math.sqrt(base));
+
+    
+        double aleatorio = Math.random();
+        System.out.println("Número aleatorio entre 0 y 1: " + aleatorio);
+
+        System.out.printf("Número con dos decimales: %.2f%n", numeroDecimal);
+  System.out.print("Ingresa un carácter: ");
+        char inputChar = scanner.next().charAt(0);
+        int ascii = (int) inputChar;
+        System.out.println("Código ASCII de '" + inputChar + "': " + ascii);
+
+          System.out.print("Ingresa un carácter: ");
+        char inputChar = scanner.next().charAt(0);
+        int ascii = (int) inputChar;
+        System.out.println("Código ASCII de '" + inputChar + "': " + ascii);
+
+         System.out.println("Consulta el archivo 'Respuestas.md' para la reflexión.");
+
+        scanner.close();
+    }
+} 
+        
+
+
+
+        
