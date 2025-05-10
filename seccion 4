@@ -1,0 +1,296 @@
+public class Persona {
+
+    private String nombre;
+    private int edad;
+
+    private static int contadorInstancias = 0; // 7. Atributo static
+
+  public Persona() {
+        this("Sin nombre", 0);
+    }
+
+* @param nombre Nombre de la persona.
+     * @param edad Edad de la persona (debe ser >= 0).
+     */
+    public Persona(String nombre, int edad) {
+        this.setNombre(nombre);
+        this.setEdad(edad);
+        contadorInstancias++;
+    }
+
+   public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre; // 6. Uso de this implícito
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        if (edad >= 0) {
+            this.edad = edad;
+        } else {
+            System.out.println("Edad no válida, se asigna 0.");
+            this.edad = 0;
+        }
+    }
+
+
+  public void presentarse() {
+        System.out.println("Hola, soy " + this.nombre + " y tengo " + this.edad + " años.");
+    }
+
+ public static int getContadorInstancias() {
+        return contadorInstancias;
+    }
+
+ @Override
+    public String toString() {
+        return "Persona{nombre='" + nombre + "', edad=" + edad + "}";
+    }
+
+    // 9. equals y hashCode basados en nombre
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Persona)) return false;
+        Persona otra = (Persona) obj;
+        return this.nombre != null && this.nombre.equals(otra.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return nombre != null ? nombre.hashCode() : 0;
+    }
+}
+
+ {@code Persona} representa a una persona con un nombre y una edad.
+ * Además, cuenta cuántas instancias han sido creadas usando un atributo estático.
+ * 
+ * <p>Incluye métodos para presentarse, obtener información, comparar por nombre,
+ * y sobreescribir {@code toString()}, {@code equals()} y {@code hashCode()}.</p>
+ * 
+ * @author TuNombre
+ * @version 1.0
+ */
+public class Persona {
+
+    /**
+     * Nombre de la persona.
+     */
+    private String nombre;
+
+    /**
+     * Edad de la persona. Debe ser mayor o igual a 0.
+     */
+    private int edad;
+
+    /**
+     * Número total de instancias creadas de {@code Persona}.
+     */
+    private static int contadorInstancias = 0;
+
+    /**
+     * Constructor sin parámetros. Asigna valores predeterminados.
+     */
+    public Persona() {
+        this("Sin nombre", 0);
+    }
+
+    /**
+     * Constructor que inicializa la persona con nombre y edad.
+     * 
+     * @param nombre Nombre de la persona.
+     * @param edad Edad de la persona. Si es negativa, se asigna 0.
+     */
+    public Persona(String nombre, int edad) {
+        this.setNombre(nombre);
+        this.setEdad(edad);
+        contadorInstancias++;
+    }
+
+    /**
+     * Obtiene el nombre de la persona.
+     * 
+     * @return el nombre actual.
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * Establece el nombre de la persona.
+     * 
+     * @param nombre Nuevo nombre.
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    /**
+     * Obtiene la edad de la persona.
+     * 
+     * @return la edad actual.
+     */
+    public int getEdad() {
+        return edad;
+    }
+
+    /**
+     * Establece la edad de la persona. Si es menor que 0, se asigna 0.
+     * 
+     * @param edad Nueva edad.
+     */
+    public void setEdad(int edad) {
+        if (edad >= 0) {
+            this.edad = edad;
+        } else {
+            System.out.println("Edad no válida, se asigna 0.");
+            this.edad = 0;
+        }
+    }
+
+    /**
+     * Presenta a la persona mostrando su nombre y edad por consola.
+     */
+    public void presentarse() {
+        System.out.println("Hola, soy " + this.nombre + " y tengo " + this.edad + " años.");
+    }
+
+    /**
+     * Devuelve el número total de personas creadas.
+     * 
+     * @return número de instancias creadas.
+     */
+    public static int getContadorInstancias() {
+        return contadorInstancias;
+    }
+
+    /**
+     * Devuelve una representación en cadena del objeto.
+     * 
+     * @return cadena con los datos de la persona.
+     */
+    @Override
+    public String toString() {
+        return "Persona{nombre='" + nombre + "', edad=" + edad + "}";
+    }
+
+    /**
+     * Compara si esta persona es igual a otra según el nombre.
+     * 
+     * @param obj Objeto a comparar.
+     * @return {@code true} si tienen el mismo nombre, de lo contrario {@code false}.
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Persona)) return false;
+        Persona otra = (Persona) obj;
+        return this.nombre != null && this.nombre.equals(otra.nombre);
+    }
+
+    /**
+     * Devuelve el código hash basado en el nombre.
+     * 
+     * @return valor hash del nombre.
+     */
+    @Override
+    public int hashCode() {
+        return nombre != null ? nombre.hashCode() : 0;
+    }
+}
+
+public class Persona implements Cloneable {
+
+    private String nombre;
+    private int edad;
+    private Direccion direccion;
+    private static int contadorInstancias = 0;
+
+    public Persona() {
+        this("Sin nombre", 0, new Direccion("Desconocida", "Ciudad"));
+    }
+
+    public Persona(String nombre, int edad) {
+        this(nombre, edad, new Direccion("Desconocida", "Ciudad"));
+    }
+
+    public Persona(String nombre, int edad, Direccion direccion) {
+        this.setNombre(nombre);
+        this.setEdad(edad);
+        this.direccion = direccion;
+        contadorInstancias++;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = Math.max(0, edad);
+    }
+
+    public Direccion getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
+    }
+
+     public final void presentarse() {
+        System.out.println("Hola, soy " + this.nombre + ", tengo " + this.edad + " años y vivo en " + direccion + ".");
+    }
+
+    public void presentarse(String saludo) {
+        System.out.println(saludo + " Soy " + this.nombre + " de " + direccion + ".");
+    }
+
+ 
+ public static int getContadorInstancias() {
+        return contadorInstancias;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{nombre='" + nombre + "', edad=" + edad + ", direccion=" + direccion + "}";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Persona)) return false;
+        Persona otra = (Persona) obj;
+        return this.nombre != null && this.nombre.equals(otra.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return nombre != null ? nombre.hashCode() : 0;
+    }
+
+
+      @Override
+    public Persona clone() {
+        try {
+            Persona clon = (Persona) super.clone();
+            clon.direccion = new Direccion(this.direccion.getCalle(), this.direccion.getCiudad()); // copia profunda
+            return clon;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
+}
