@@ -1,0 +1,149 @@
+import java.util.*;
+
+public class EstructurasControl {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+nt numero = 10;
+        if (numero > 5) {
+            System.out.println("El número es mayor que 5");
+        } else {
+            System.out.println("El número es 5 o menor");
+        }
+int edad = 67;
+        if (edad < 12) {
+            System.out.println("Niño");
+        } else if (edad < 18) {
+            System.out.println("Adolescente");
+        } else if (edad < 60) {
+            System.out.println("Adulto");
+        } else {
+            System.out.println("Anciano");
+        }
+ System.out.println("Menú: 1. Ver, 2. Editar, 3. Salir");
+        int opcion = scanner.nextInt();
+        switch (opcion) {
+            case 1:
+                System.out.println("Has elegido Ver");
+                break;
+            case 2:
+                System.out.println("Has elegido Editar");
+                break;
+            case 3:
+                System.out.println("Has elegido Salir");
+                break;
+            default:
+                System.out.println("Opción no válida");
+        }
+ for (int i = 1; i <= 20; i++) {
+            long factorial = 1;
+            for (int j = 1; j <= i; j++) {
+                factorial *= j;
+            }
+            System.out.println("Factorial de " + i + " = " + factorial);
+        }
+   int suma = 0;
+        int entrada;
+        System.out.println("Ingresa números para sumar (0 para salir):");
+        while ((entrada = scanner.nextInt()) != 0) {
+            suma += entrada;
+        }
+        System.out.println("Suma total: " + suma);
+         String contraseña;
+        do {
+            System.out.print("Introduce la contraseña: ");
+            contraseña = scanner.next();
+        } while (!contraseña.equals("1234"));
+        System.out.println("¡Contraseña correcta!");
+
+       
+        for (int i = 1; i <= 10; i++) {
+            if (i == 5) continue; // omite 5
+            if (i == 8) break;    // detiene en 8
+            System.out.print(i + " ");
+        }
+        System.out.println();
+         for (int i = 1; i <= 10; i++) {
+            for (int j = 1; j <= 10; j++) {
+                System.out.printf("%2d x %2d = %3d  ", i, j, i * j);
+            }
+            System.out.println();
+        }
+
+  String[] frutas = {"Manzana", "Banana", "Cereza"};
+        for (String fruta : frutas) {
+            System.out.println("Fruta: " + fruta);
+        }
+  
+   System.out.println("Fibonacci (primeros 10):");
+        for (int i = 0; i < 10; i++) {
+            System.out.print(fibonacci(i) + " ");
+        }
+        System.out.println();
+
+         ArrayList<Integer> numeros = new ArrayList<>();
+        System.out.println("Ingresa 5 números:");
+        for (int i = 0; i < 5; i++) {
+            numeros.add(scanner.nextInt());
+        } 
+        
+        System.out.println("Números pares:");
+        for (int n : numeros) {
+            if (n % 2 == 0) {
+                System.out.print(n + " ");
+            }
+        }
+       
+        System.out.println();
+    Collections.sort(numeros);
+        System.out.println("Ordenados: " + numeros);
+
+         Set<Integer> sinDuplicados = new HashSet<>(numeros);
+        System.out.println("Sin duplicados: " + sinDuplicados);
+     String[] colores = {"Rojo", "Verde", "Azul", "Rojo"};
+        List<String> listaColores = Arrays.asList(colores);
+        System.out.println("Lista de colores: " + listaColores);
+
+        // 15. Referencia a reflexión
+        System.out.println("Consulta el archivo 'Respuestas.md' para la reflexión final.");
+
+        scanner.close();
+    }
+
+        
+ public static int fibonacci(int n) {
+        if (n <= 1) return n;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
+
+  ArrayList<Integer> numeros = new ArrayList<>();
+        System.out.println("Ingresa 10 números:");
+        for (int i = 0; i < 10; i++) {
+            numeros.add(scanner.nextInt());
+        }
+
+       System.out.println("Números pares:");
+        for (int n : numeros) {
+            if (n % 2 == 0) {
+                System.out.print(n + " ");
+            }
+        }
+        System.out.println();
+
+         Collections.sort(numeros);
+        System.out.println("Lista ordenada: " + numeros);
+
+
+       Set<Integer> sinDuplicados = new HashSet<>(numeros);
+        System.out.println("Lista sin duplicados: " + sinDuplicados);
+
+ String[] animales = {"Perro", "Gato", "Loro", "Gato"};
+        List<String> listaAnimales = Arrays.asList(animales);
+        System.out.println("Lista de animales (desde array): " + listaAnimales);
+
+        scanner.close();
+    }
+}
+
+
+
